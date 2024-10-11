@@ -211,7 +211,7 @@ button:hover {
     margin-top: 8px; /* Space above the title */
 }
 
-.star-icon {
+.star {
     position: absolute; /* Position relative to the parent element */
     top: 10px; /* Distance from the top of the column */
     left: 10px; /* Distance from the left of the column */
