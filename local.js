@@ -150,6 +150,41 @@ window.onload = function() {
     document.addEventListener('keydown', handleKeydown);
 };
 
+let favoriteGames = [];
+
+function toggleFavorite(gameName, event) {
+  const starElement = event.target;
+
+  // Prevent the event from bubbling up to the parent elements
+  event.stopPropagation();
+
+  if (favoriteGames.includes(gameName)) {
+    // Remove from favorites
+    favoriteGames = favoriteGames.filter(game => game !== gameName);
+    starElement.innerText = "☆"; // Change to unfilled star
+  } else {
+    // Add to favorites
+    favoriteGames.push(gameName);
+    starElement.innerText = "★"; // Change to filled star
+  }
+
+  updateFavoritesSection();
+}
+
+function updateFavoritesSection() {
+  const favoritesSection = document.getElementById("favorite-games-section");
+  favoritesSection.innerHTML = ""; // Clear previous favorites
+
+  if (favoriteGames.length > 0) {
+    favoriteGames.forEach(game => {
+      const gameElement = document.createElement("p");
+      gameElement.textContent = game;
+      favoritesSection.appendChild(gameElement);
+    });
+  } else {
+    favoritesSection.innerHTML = "<p>No favorite games yet.</p>";
+  }
+}
 
 
 

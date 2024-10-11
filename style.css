@@ -178,3 +178,35 @@ button:hover {
     font-size: 15px;
 }
 
+.favorite-games {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0; /* Margin for spacing around the section */
+}
+
+.favorite-icon {
+    font-family: 'faSolid'; /* Use your font for the star icon */
+    font-size: 24px; /* Adjust size as needed */
+    color: yellow; /* Color for filled star */
+    cursor: pointer; /* Change cursor to pointer for interactivity */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.favorite-icon:hover {
+    color: gold; /* Change color on hover for effect */
+}
+
+.favorite-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items */
+    margin: 0 10px; /* Space between favorite games */
+    text-align: center; /* Center text */
+}
+
+.favorite-game-title {
+    font-family: GoBold; /* Font for the game title */
+    color: var(--text-primary); /* Primary text color */
+    font-size: 18px; /* Title font size */
+    margin-top: 8px; /* Space above the title */
+}
