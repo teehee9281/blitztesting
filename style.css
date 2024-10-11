@@ -210,3 +210,13 @@ button:hover {
     font-size: 18px; /* Title font size */
     margin-top: 8px; /* Space above the title */
 }
+
+.star-icon {
+    position: absolute; /* Position relative to the parent element */
+    top: 10px; /* Distance from the top of the column */
+    left: 10px; /* Distance from the left of the column */
+    font-size: 24px; /* Increase size for better visibility */
+    color: white; /* Default color */
+    transition: color 0.3s; /* Smooth color transition */
+    z-index: 1; /* Ensure it appears above other elements */
+}
