@@ -150,41 +150,58 @@ window.onload = function() {
     document.addEventListener('keydown', handleKeydown);
 };
 
-let favoriteGames = [];
+// Get all game elements
+const gameElements = document.querySelectorAll('.column');
 
-function toggleFavorite(gameName, event) {
-  const starElement = event.target;
+// Load favorite games from local storage on page load
+const favoriteGames = JSON.parse(localStorage.getItem('favoriteGames')) || [];
 
-  // Prevent the event from bubbling up to the parent elements
-  event.stopPropagation();
+// Function to toggle favorite status
+function toggleFavorite(gameId) {
+    const gameIndex = favoriteGames.indexOf(gameId);
 
-  if (favoriteGames.includes(gameName)) {
-    // Remove from favorites
-    favoriteGames = favoriteGames.filter(game => game !== gameName);
-    starElement.innerText = "☆"; // Change to unfilled star
-  } else {
-    // Add to favorites
-    favoriteGames.push(gameName);
-    starElement.innerText = "★"; // Change to filled star
-  }
+    // If game is already favorite, remove it
+    if (gameIndex > -1) {
+        favoriteGames.splice(gameIndex, 1);
+    } else {
+        // If not, add it to favorites
+        favoriteGames.push(gameId);
+    }
 
-  updateFavoritesSection();
+    // Save updated favorites to local storage
+    localStorage.setItem('favoriteGames', JSON.stringify(favoriteGames));
+
+    // Update the star icon for the game
+    updateFavoriteIcons();
 }
 
-function updateFavoritesSection() {
-  const favoritesSection = document.getElementById("favorite-games-section");
-  favoritesSection.innerHTML = ""; // Clear previous favorites
+// Function to update the favorite icons based on the stored favorites
+function updateFavoriteIcons() {
+    gameElements.forEach((element) => {
+        const gameId = element.getAttribute('data-game-id');
+        const starIcon = element.querySelector('.star-icon');
 
-  if (favoriteGames.length > 0) {
-    favoriteGames.forEach(game => {
-      const gameElement = document.createElement("p");
-      gameElement.textContent = game;
-      favoritesSection.appendChild(gameElement);
+        if (favoriteGames.includes(gameId)) {
+            starIcon.classList.add('fas', 'fa-star');
+            starIcon.style.color = 'yellow';
+        } else {
+            starIcon.classList.remove('fas', 'fa-star');
+            starIcon.style.color = 'white'; // Or your default color
+        }
     });
-  } else {
-    favoritesSection.innerHTML = "<p>No favorite games yet.</p>";
-  }
 }
+
+// Initial call to update icons on page load
+updateFavoriteIcons();
+
+// Add click event listener to each game element
+gameElements.forEach((element) => {
+    const gameId = element.getAttribute('data-game-id');
+
+    element.addEventListener('click', () => {
+        toggleFavorite(gameId);
+    });
+});
 
 
 
