@@ -55,8 +55,8 @@ button:hover {
     position: absolute;
     top: 0; 
     left: 0; 
-    width: 95%; 
-    height: 95%; 
+    width: 69%; 
+    height: 69%; 
     border-radius: 10px;
     transition: all .2s ease;
    
