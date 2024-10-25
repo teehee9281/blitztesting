@@ -1,4 +1,4 @@
-let panicKey;
+let panicKey = '`';
 let panicKeyShort;
 let panicLink;
 
