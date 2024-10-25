@@ -79,32 +79,38 @@ function changeCloak(selectedValue) {
         case "Google-Docs":
             favicon.href = "CloakIMGs/docs.ico";
             title.innerText = "Google Docs";
-            panicLink = 'docs.google.com'
+            panicLink = 'docs.google.com';
+            panicKeyShort = '`';
             break;
         case "Google-Classroom":
             favicon.href = "CloakIMGs/Classroom.png";
             title.innerText = "Home";
-            panicLink = 'https://classroom.google.com'
+            panicLink = 'https://classroom.google.com';
+            panicKeyShort = '`';
             break;
         case "Clever":
             favicon.href = "CloakIMGs/clever.ico";
             title.innerText = "Clever | Portal";
-            panicLink = 'https://www.clever.com/'
+            panicLink = 'https://www.clever.com/';
+            panicKeyShort = '`';
             break;
         case "Powerschool":
             favicon.href = "CloakIMGs/Powerschool.ico";
             title.innerText = "Weekly Schedule";
             panicLink = 'https://myics.powerschool.com';
+            panicKeyShort = '`';
             break;
         case "Powerschool-2":
             favicon.href = "CloakIMGs/Powerschool.ico";
             title.innerText = "Grades and Attendance";
             panicLink = 'https://myics.powerschool.com';
+            panicKeyShort = '`';
             break;
         case "Powerschool-3":
             favicon.href = "CloakIMGs/Powerschool.ico";
             title.innerText = "Meeting Attendance";
             panicLink = 'https://myics.powerschool.com';
+            panicKeyShort = '`';
             break;
     }
 }
