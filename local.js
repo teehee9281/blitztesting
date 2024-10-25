@@ -81,36 +81,72 @@ function changeCloak(selectedValue) {
             title.innerText = "Google Docs";
             panicLink = 'docs.google.com';
             panicKeyShort = '`';
+             if (document.getElementById("keyInput")) {
+            document.getElementById("keyInput").value = panicKey; // Set input field
+        }
+        if (document.getElementById("linkChoice")) {
+            document.getElementById("linkChoice").value = panicLink; // Set input field
+        }
             break;
         case "Google-Classroom":
             favicon.href = "CloakIMGs/Classroom.png";
             title.innerText = "Home";
             panicLink = 'https://classroom.google.com';
             panicKeyShort = '`';
+             if (document.getElementById("keyInput")) {
+            document.getElementById("keyInput").value = panicKey; // Set input field
+        }
+        if (document.getElementById("linkChoice")) {
+            document.getElementById("linkChoice").value = panicLink; // Set input field
+        }
             break;
         case "Clever":
             favicon.href = "CloakIMGs/clever.ico";
             title.innerText = "Clever | Portal";
             panicLink = 'https://www.clever.com/';
             panicKeyShort = '`';
+             if (document.getElementById("keyInput")) {
+            document.getElementById("keyInput").value = panicKey; // Set input field
+        }
+        if (document.getElementById("linkChoice")) {
+            document.getElementById("linkChoice").value = panicLink; // Set input field
+        }
             break;
         case "Powerschool":
             favicon.href = "CloakIMGs/Powerschool.ico";
             title.innerText = "Weekly Schedule";
             panicLink = 'https://myics.powerschool.com';
             panicKeyShort = '`';
+             if (document.getElementById("keyInput")) {
+            document.getElementById("keyInput").value = panicKey; // Set input field
+        }
+        if (document.getElementById("linkChoice")) {
+            document.getElementById("linkChoice").value = panicLink; // Set input field
+        }
             break;
         case "Powerschool-2":
             favicon.href = "CloakIMGs/Powerschool.ico";
             title.innerText = "Grades and Attendance";
             panicLink = 'https://myics.powerschool.com';
             panicKeyShort = '`';
+             if (document.getElementById("keyInput")) {
+            document.getElementById("keyInput").value = panicKey; // Set input field
+        }
+        if (document.getElementById("linkChoice")) {
+            document.getElementById("linkChoice").value = panicLink; // Set input field
+        }
             break;
         case "Powerschool-3":
             favicon.href = "CloakIMGs/Powerschool.ico";
             title.innerText = "Meeting Attendance";
             panicLink = 'https://myics.powerschool.com';
             panicKeyShort = '`';
+             if (document.getElementById("keyInput")) {
+            document.getElementById("keyInput").value = panicKey; // Set input field
+        }
+        if (document.getElementById("linkChoice")) {
+            document.getElementById("linkChoice").value = panicLink; // Set input field
+        }
             break;
     }
 }
