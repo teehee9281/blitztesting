@@ -236,8 +236,15 @@ function updateFavoriteIcons() {
             starIcon.classList.remove('fas', 'fa-star');
             starIcon.style.color = 'white'; // Or your default color
         }
+
+        // Make star icon clickable
+        starIcon.onclick = (event) => {
+            event.stopPropagation(); // Prevent triggering the game element's click event
+            toggleFavorite(gameId);
+        };
     });
 }
+
 
 // Initial call to update icons on page load
 updateFavoriteIcons();
