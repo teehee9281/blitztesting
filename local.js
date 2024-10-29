@@ -200,6 +200,16 @@ window.onload = function() {
 
 // Get all game elements
 const gameElements = document.querySelectorAll('.column');
+gameElements.forEach((element) => {
+    const gameId = element.getAttribute('data-game-id');
+
+    element.addEventListener('click', () => {
+        toggleFavorite(gameId); // This should only be called when the star is not clicked
+        // Open the game here, e.g.:
+        openGame(gameId); // Replace this with your actual game opening logic
+    });
+});
+
 
 // Load favorite games from local storage on page load
 const favoriteGames = JSON.parse(localStorage.getItem('favoriteGames')) || [];
@@ -229,6 +239,7 @@ function updateFavoriteIcons() {
         const gameId = element.getAttribute('data-game-id');
         const starIcon = element.querySelector('.star-icon');
 
+        // Check if the game is a favorite
         if (favoriteGames.includes(gameId)) {
             starIcon.classList.add('fas', 'fa-star');
             starIcon.style.color = 'yellow';
@@ -237,13 +248,15 @@ function updateFavoriteIcons() {
             starIcon.style.color = 'white'; // Or your default color
         }
 
-        // Make star icon clickable
+        // Make star icon clickable and prevent propagation
         starIcon.onclick = (event) => {
             event.stopPropagation(); // Prevent triggering the game element's click event
             toggleFavorite(gameId);
+            updateFavoriteIcons(); // Update icons after toggling
         };
     });
 }
+
 
 
 // Initial call to update icons on page load
